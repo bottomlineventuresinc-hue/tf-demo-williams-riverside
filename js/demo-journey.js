@@ -57,7 +57,7 @@
       apply: function () {
         if (heroLede) {
           heroLede.textContent =
-            'Plumbing, sprinkler and irrigation repair, and landscaping support. Across Riverside and the Inland Empire. Frederick looks at the job first and puts the price in writing.';
+            'Plumbing, sprinkler and irrigation repair, and landscaping support in Riverside. Frederick looks at the job first and puts the price in writing.';
         }
       }
     },
