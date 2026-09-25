@@ -1,11 +1,11 @@
 /* =========================================================
-   COPPERLINE BUILDERS — trade, done properly
+   COPPERLINE BUILDERS , trade, done properly
    Charcoal ground, copper accent, warm off-white light rooms.
    Anton (display) / Public Sans (text) / IBM Plex Mono (figures)
    ========================================================= */
 
 :root{
-  /* spacing scale — the only spacing values used anywhere */
+  /* spacing scale , the only spacing values used anywhere */
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
   --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
 
@@ -18,7 +18,7 @@
   --t-xl:  clamp(2rem, 1.5rem + 2.4vw, 3.5rem);
   --t-2xl: clamp(2.75rem, 1.9rem + 4.4vw, 5.5rem);
 
-  /* palette — charcoal biased warm, copper accent, warm off-white */
+  /* palette , charcoal biased warm, copper accent, warm off-white */
   --ground:#232120;          /* deep warm charcoal */
   --raised:#2d2a28;          /* raised surface on dark */
   --ink-on-dark:#f2ece3;     /* warm off-white ink on dark */
@@ -92,7 +92,7 @@ em{font-style:normal;color:var(--copper)}
 }
 .kicker::before{content:"";width:var(--s6);height:3px;background:var(--copper);flex:none}
 
-/* buttons — solid, not floaty */
+/* buttons , solid, not floaty */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   font-family:var(--font-text);font-weight:700;font-size:var(--t-sm);
@@ -145,7 +145,7 @@ em{font-style:normal;color:var(--copper)}
 @media (max-width:900px){ .site-nav{display:none} }
 
 /* =========================================================
-   HERO — the dossier cover
+   HERO , the dossier cover
    ========================================================= */
 .hero{background:var(--ground);color:var(--ink-on-dark);padding-block:var(--s9) 0}
 .hero__grid{
@@ -229,7 +229,7 @@ section{padding-block:var(--s9)}
 [data-reveal].is-in{opacity:1;transform:none}
 
 /* =========================================================
-   THE WORK — before/after job records
+   THE WORK , before/after job records
    ========================================================= */
 .work{background:var(--paper)}
 .work .wrap{display:grid;gap:var(--s8)}
@@ -299,7 +299,7 @@ section{padding-block:var(--s9)}
 .job__cell .mono{font-size:var(--t-md);color:var(--copper-deep)}
 
 /* =========================================================
-   SERVICES — dark room
+   SERVICES , dark room
    ========================================================= */
 .services{background:var(--ground);color:var(--ink-on-dark);
   border-top:var(--rule) solid var(--copper)}
@@ -586,7 +586,7 @@ section{padding-block:var(--s9)}
 }
 
 /* =========================================================
-   REDUCED MOTION — everything resolves to visible & still
+   REDUCED MOTION , everything resolves to visible & still
    ========================================================= */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -603,3 +603,9 @@ section{padding-block:var(--s9)}
   .house__stroke{stroke-dashoffset:0;transition:none}
   .quotebar{transition:none}
 }
+
+/* Wave 11: word facts (no invented numbers) */
+.hero__facts--text dd{font-size:var(--t-md);line-height:1.2}
+/* Wave 11: sample jobs carry no prices (3 meta cells) */
+.job__meta{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:768px){.job__meta{grid-template-columns:repeat(2,minmax(0,1fr))}.job__cell:last-child{grid-column:1/-1;border-bottom:none}}

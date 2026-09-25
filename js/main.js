@@ -1,4 +1,4 @@
-/* Copperline Builders — template behaviour.
+/* Copperline Builders , template behaviour.
    Written from scratch for this template. No dependencies. */
 (function () {
   'use strict';
@@ -6,7 +6,7 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   /* =====================================================
-     1. BEFORE / AFTER DRAG SLIDERS — the spine
+     1. BEFORE / AFTER DRAG SLIDERS , the spine
      Pointer drag (mouse + touch), keyboard on the handle.
      No jump on grab: dragging the handle keeps the grab
      offset; pressing elsewhere on the frame moves there.
@@ -86,7 +86,7 @@
   Array.prototype.forEach.call(document.querySelectorAll('[data-ba]'), initBA);
 
   /* =====================================================
-     2. SCROLL REVEALS — IntersectionObserver, unobserved
+     2. SCROLL REVEALS , IntersectionObserver, unobserved
      after firing. Reduced motion: CSS already shows all.
      ===================================================== */
   var revealEls = document.querySelectorAll('[data-reveal]');
@@ -107,7 +107,7 @@
   }
 
   /* =====================================================
-     3. COUNT-UPS — figures roll up when first seen.
+     3. COUNT-UPS , figures roll up when first seen.
      ===================================================== */
   var counters = document.querySelectorAll('[data-count]');
   function runCounter(el) {
@@ -145,7 +145,7 @@
   }
 
   /* =====================================================
-     4. STICKY QUOTE BAR — appears once the hero is passed,
+     4. STICKY QUOTE BAR , appears once the hero is passed,
      stands down while the quote form itself is on screen.
      ===================================================== */
   var quotebar = document.querySelector('[data-quotebar]');
@@ -172,7 +172,7 @@
   }
 
   /* =====================================================
-     5. CONTACT FORM — demo branch. Remove this block and
+     5. CONTACT FORM , demo branch. Remove this block and
      the form posts to php/contact.php on a PHP host.
      ===================================================== */
   var form = document.querySelector('.quote__form');
@@ -193,7 +193,7 @@
         return;
       }
       status.textContent =
-        'DEMO MODE: details noted. On a live server this posts to php/contact.php and we ring within one working day.';
+        'Preview only: nothing was sent. For a real quote, call Frederick at 951-207-3225.';
       form.reset();
     });
   }

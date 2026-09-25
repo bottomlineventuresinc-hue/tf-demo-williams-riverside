@@ -1,0 +1,20 @@
+PHOTO SOURCES · hs-004-williams Williams Hustle and Bustle Crew (CR 2026-09-25b PT rebuild)
+All CC0 / public domain (StockSnap, rawpixel CC0, WordPress Photos CC0, Flickr CC0/PDM via Openverse) or prior verified Wave library.
+Every file opened and checked for trade fit and job-label fit. No face is used or captioned as the owner or crew.
+Sample B/A photos are labeled on page as stock images typical of this kind of job.
+
+hero-site.jpg <- cr0925/land-sprinkler-lawn.jpg : water sprinkler grass (rawpixel CC0 https://www.rawpixel.com/image/6024391/photo-image-public-domain-plant-green)
+services-trade.jpg <- wave11/plumb-wrenches-pipe.jpg : pipe wrenches on a pipe (rawpixel CC0 5904346)
+people-crew.jpg <- wave11/tools-wrenches-dark.jpg : wrench set, dark background (StockSnap CC0 F91K0WLE2D)
+people-marek.jpg <- cr0925/land-sprinkler-lawn.jpg : water sprinkler grass (rawpixel CC0 https://www.rawpixel.com/image/6024391/photo-image-public-domain-plant-green)
+people-tom.jpg <- wave11/shower-head-spray.jpg : shower head running (rawpixel CC0 6032192)
+coverage-house.jpg <- wave11/house-stucco-ie.jpg : stucco single-story home, Southwest style (StockSnap CC0 L9VZ6SOGBB)
+land-shovel-bed.jpg <- cr0925/land-shovel-bed.jpg : Shovel gardening (rawpixel CC0 https://www.rawpixel.com/image/6037169/photo-image-public-domain-plant-free)
+land-sprinkler-lawn.jpg <- cr0925/land-sprinkler-lawn.jpg : water sprinkler grass (rawpixel CC0 https://www.rawpixel.com/image/6024391/photo-image-public-domain-plant-green)
+plumb-under-sink-hands.jpg <- wave11/plumb-under-sink-hands.jpg : hands fitting a supply line under a sink, no face (prior verified library wave2/under-sink.jpg)
+kitchen-sink-steel.jpg <- wave11/kitchen-sink-steel.jpg : stainless double kitchen sink and faucet (rawpixel CC0 5907815)
+plumb-wrenches-pipe.jpg <- wave11/plumb-wrenches-pipe.jpg : pipe wrenches on a pipe (rawpixel CC0 5904346)
+copper-valves-filter.jpg <- wave11/copper-valves-filter.jpg : copper supply lines with red ball valves and a filter housing (rawpixel CC0 6041215)
+
+Replaced from the prior build: all photos (prior library had mislabeled trade images and stock faces).
+Note: Photos are pipes, sprinklers, and yard, not luxury remodel. Hector Cruz Gonzalez is the RME, not the owner, and is not named as owner.

@@ -1,4 +1,4 @@
-/* Template Factory - Williams Hustle and Bustle live demo journey.
+/* Template Factory - Williams Hustle and Bustle Crew live demo journey.
    Client-side simulate only. No real AI, SMS, or backend. */
 (function () {
   'use strict';
@@ -57,7 +57,7 @@
       apply: function () {
         if (heroLede) {
           heroLede.textContent =
-            'Plumbing, sprinkler and irrigation repair, and landscaping support across Riverside and the Inland Empire. Fixed itemised quotes before we start, Frederick as your named lead on site, and a twelve-month workmanship guarantee when we leave.';
+            'Plumbing, sprinkler and irrigation repair, and landscaping support. Across Riverside and the Inland Empire. Frederick looks at the job first and puts the price in writing.';
         }
       }
     },
@@ -65,7 +65,7 @@
       id: 'h1',
       apply: function () {
         if (heroH) {
-          heroH.innerHTML = 'Plumbing and sprinklers,<br>quoted <em>before</em> we start.';
+          heroH.innerHTML = 'Pipes and sprinklers,<br>priced <em>first.</em>';
         }
       }
     },
@@ -73,7 +73,7 @@
       id: 'service',
       apply: function () {
         if (serviceFirst) {
-          serviceFirst.textContent = 'Plumbing repair (written programme)';
+          serviceFirst.textContent = 'Sprinkler and irrigation repair (written price)';
         }
       }
     }
@@ -85,7 +85,7 @@
     /* mode: draft | updated */
     if (!barSub) return;
     if (mode === 'updated') {
-      barSub.textContent = 'Draft updated. More changes? Or claim it.';
+      barSub.textContent = 'Draft for Frederick at Williams Hustle and Bustle Crew. Claim it, preview the rest of the journey, or request a change.';
     } else {
       barSub.textContent = 'Draft for Frederick at Williams Hustle and Bustle Crew. Claim it, preview the rest of the journey, or request a change.';
     }
@@ -158,7 +158,7 @@
       var delay = 2500 + Math.floor(Math.random() * 1500);
       runSpinner(
         'Working on updates to your site…',
-        'Updating the draft for Williams Hustle and Bustle. Hang tight.',
+        'Updating the draft for Williams Hustle and Bustle Crew. Hang tight.',
         delay,
         function () {
           var editId = applyNextEdit();
