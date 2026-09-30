@@ -29,7 +29,7 @@ body.has-tf-bar{padding-bottom:7.5rem}
   box-shadow:0 0 0 3px rgba(180,90,50,.25);
 }
 
-/* Sticky claim / change bar */
+/* Sticky pricing bar */
 .tf-bar{
   position:fixed;left:0;right:0;bottom:0;z-index:70;
   background:var(--ground);color:var(--ink-on-dark);

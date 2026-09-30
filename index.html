@@ -522,18 +522,11 @@
 
 
 <!-- ===== Template Factory demo journey (client-side only) ===== -->
-<div class="tf-bar" id="tf-bar" role="region" aria-label="Draft claim and changes">
+<div class="tf-bar" id="tf-bar" role="region" aria-label="Pricing and questions">
   <div class="tf-bar__inner">
     <div class="tf-bar__meta">
-      <p class="tf-bar__label">Draft · Williams Hustle and Bustle Crew</p>
-      <p class="tf-bar__sub" id="tf-bar-sub">Draft for Frederick at Williams Hustle and Bustle Crew. Claim it, preview the rest of the journey, or request a change.</p>
-    </div>
-    <div class="tf-bar__actions">
-      <a class="btn btn--copper" data-tf="claim" href="https://buy.stripe.com/cNieVdg1peCq9subRr1gs02" target="_blank" rel="noopener">Claim this site · $297</a>
-      <a class="btn btn--ghost" data-tf="hosting" href="https://buy.stripe.com/8x2fZhaH52TI0VY7Bb1gs03" target="_blank" rel="noopener">Hosting · $99/mo</a>
-      <button type="button" class="btn btn--ghost" data-tf="change">Request a change</button>
-      <button type="button" class="btn btn--ghost" data-tf="journey">Preview rest of journey (demo)</button>
-      <button type="button" class="btn btn--linkish" data-tf="simulate">I paid / simulate purchase</button>
+      <p class="tf-bar__sub" style="max-width:none;color:var(--ink-on-dark)">No upfront design or setup cost. Once your site is live, it's $99/month and includes hosting, routine maintenance, and up to two hours of updates each month.</p>
+      <p class="tf-bar__sub" id="tf-bar-sub">Questions or changes? Just reply to my text.</p>
     </div>
   </div>
 </div>
@@ -583,7 +576,7 @@
     </div>
 
     <div class="tf-step" data-step="pay">
-      <p class="tf-note"><strong>Payment confirmed (demo).</strong> Setup fee $297 noted. Hosting is $99/mo after go-live. No real charge was made on this path.</p>
+      <p class="tf-note"><strong>Go-live steps (demo).</strong> No real charge is made on this path.</p>
       <div class="tf-step__actions">
         <button type="button" class="btn btn--copper" data-tf="journey-next-onboard">Continue to onboarding</button>
         <button type="button" class="btn btn--ghost" data-tf="close-journey">Close</button>
@@ -601,19 +594,19 @@
         </div>
 
         <div class="tf-path" id="tf-path-a" hidden>
-          <p class="tf-note">Path A · invite-first. We will ask your registrar to point the domain after you approve the invite.</p>
+          <p class="tf-note">Path A · invite-first. Nothing changes on your current site until you approve.</p>
           <div class="tf-field">
             <label for="tf-current-url">Current website URL</label>
             <input id="tf-current-url" type="text" placeholder="https://yoursite.com" autocomplete="url">
           </div>
           <div class="tf-field">
             <label for="tf-registrar-a">Registrar</label>
-            <input id="tf-registrar-a" type="text" placeholder="GoDaddy, Namecheap, Google Domains…">
+            <input id="tf-registrar-a" type="text" placeholder="Where the current site is managed">
           </div>
         </div>
 
         <div class="tf-path" id="tf-path-no-site" hidden>
-          <p><strong>Do you already own a domain?</strong></p>
+          <p><strong>Do you already have a name picked out for the site?</strong></p>
           <div class="tf-choice__btns">
             <button type="button" class="btn btn--ghost" data-tf="domain-yes">Yes, I have one</button>
             <button type="button" class="btn btn--ghost" data-tf="domain-no">Not yet</button>
@@ -621,10 +614,10 @@
         </div>
 
         <div class="tf-path" id="tf-path-b" hidden>
-          <p class="tf-note">Path B · you have a domain. We connect it after setup.</p>
+          <p class="tf-note">Path B · you have a name picked out. We confirm the details by text.</p>
           <div class="tf-field">
-            <label for="tf-domain-b">Domain</label>
-            <input id="tf-domain-b" type="text" placeholder="williamshustlebustle.com">
+            <label for="tf-domain-b">Site name</label>
+            <input id="tf-domain-b" type="text" placeholder="The name you have in mind">
           </div>
           <div class="tf-field">
             <label for="tf-registrar-b">Registrar</label>
@@ -633,7 +626,7 @@
         </div>
 
         <div class="tf-path" id="tf-path-c" hidden>
-          <p class="tf-note">Path C · three name ideas. We show a shortlist, priced at cost. Demo list only; availability is checked again at purchase.</p>
+          <p class="tf-note">Path C · three name ideas. Demo list only; we follow up by text.</p>
           <div class="tf-field">
             <label for="tf-idea-1">Name idea 1</label>
             <input id="tf-idea-1" type="text" placeholder="Williams Hustle Bustle">
@@ -648,14 +641,14 @@
           </div>
           <p class="tf-note" style="margin-top:0.5rem"><strong>Shortlist (demo)</strong></p>
           <div class="tf-domain-list">
-            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="williamshustlebustle.com">
-              <strong>williamshustlebustle.com</strong><span>at cost</span>
+            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="option-1">
+              <strong>Option 1</strong><span>demo</span>
             </button>
-            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="williamsriversidecrew.com">
-              <strong>williamsriversidecrew.com</strong><span>at cost</span>
+            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="option-2">
+              <strong>Option 2</strong><span>demo</span>
             </button>
-            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="hustlebustlecrew.com">
-              <strong>hustlebustlecrew.com</strong><span>at cost</span>
+            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="option-3">
+              <strong>Option 3</strong><span>demo</span>
             </button>
           </div>
           <input type="hidden" id="tf-domain-picked" value="">
@@ -666,17 +659,17 @@
           <input id="tf-bill-email" type="email" autocomplete="email" placeholder="you@example.com">
         </div>
         <div class="tf-field">
-          <label for="tf-bill-phone">Phone for setup texts</label>
+          <label for="tf-bill-phone">Phone for go-live texts</label>
           <input id="tf-bill-phone" type="tel" autocomplete="tel" placeholder="951-207-3225">
         </div>
         <div class="tf-checks">
           <label class="tf-check">
             <input type="checkbox" id="tf-utility">
-            <span>Utility note: pay hosting on time and the site stays live. Miss payment and we suspend until it is current.</span>
+            <span>I understand this is a demo walkthrough.</span>
           </label>
           <label class="tf-check">
             <input type="checkbox" id="tf-terms">
-            <span>I acknowledge the setup and hosting terms for this demo.</span>
+            <span>I acknowledge the hosting terms for this demo.</span>
           </label>
         </div>
         <p class="tf-err" id="tf-onboard-err" role="alert"></p>
@@ -705,23 +698,17 @@
       <div class="tf-bubbles">
         <div class="tf-bubble tf-bubble--sms">
           <p class="tf-bubble__meta">SMS · just now</p>
-          <p>Frederick, your Williams Hustle and Bustle Crew site is live: https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/ · Reply if anything looks off. Hosting is $99/mo starting next cycle.</p>
+          <p>Frederick, your Williams Hustle and Bustle Crew site is live: https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/ · Reply if anything looks off.</p>
         </div>
         <div class="tf-bubble tf-bubble--email">
           <p class="tf-bubble__meta">Email · just now</p>
-          <p>Subject: Williams Hustle and Bustle Crew is live<br><br>Hi Frederick, your site is up. Bookmark the link above. If you need a tweak, reply to this email or use Request a change on the draft. Hosting keeps DNS, SSL, and hosting warm at $99/mo.</p>
+          <p>Subject: Williams Hustle and Bustle Crew is live<br><br>Hi Frederick, your site is up. Bookmark the link above. If you need a tweak, reply to this email or use Request a change on the draft.</p>
         </div>
       </div>
 
       <div class="tf-step__actions" style="margin-top:0.5rem">
-        <a class="btn btn--copper" data-tf="hosting" href="https://buy.stripe.com/8x2fZhaH52TI0VY7Bb1gs03" target="_blank" rel="noopener">Start hosting · $99/mo</a>
         <button type="button" class="btn btn--ghost" data-tf="journey-done">Done</button>
       </div>
-
-      <details class="tf-details">
-        <summary>What if they don't pay?</summary>
-        <p>Sample suspend park notice (not sent): "Hi Frederick, hosting for Williams Hustle and Bustle Crew is past due. The site is on a temporary park page until payment clears. Pay here to restore: [hosting link]. Call us if you need a day or two."</p>
-      </details>
     </div>
   </div>
 </div>
@@ -735,23 +722,19 @@
       </div>
       <button type="button" class="tf-modal__close" data-tf="close-outreach" aria-label="Close">&times;</button>
     </div>
-    <p class="tf-note">Human sequence from first touch to soft claim. Filled for Williams Hustle and Bustle Crew / Frederick / Riverside. Nothing is sent from this page.</p>
+    <p class="tf-note">Human sequence from first touch to follow-up. Filled for Williams Hustle and Bustle Crew / Frederick / Riverside. Nothing is sent from this page.</p>
     <div class="tf-bubbles">
       <div class="tf-bubble tf-bubble--sms">
-        <p class="tf-bubble__meta">1 · First touch</p>
-        <p>Hi Frederick, this is Maria with Bottom Line Ventures. I put together a simple site draft for Williams Hustle and Bustle Crew in Riverside. Mind if I text you the preview?</p>
+        <p class="tf-bubble__meta">1 · First text</p>
+        <p>Hi Frederick, this is Maria with Template Factory. I came across Williams Hustle and Bustle Crew and put together a sample site to show how your plumbing and landscaping work could look online. It's made just for your business. Would you like me to send it over?</p>
       </div>
       <div class="tf-bubble tf-bubble--sms">
-        <p class="tf-bubble__meta">2 · Preview</p>
-        <p>Here you go: https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/ · Plumbing, sprinkler and irrigation repair, and landscaping support in Riverside, with the price in writing. Tell me what to change and I will update the draft.</p>
+        <p class="tf-bubble__meta">2 · After they say yes</p>
+        <p>Thanks, Frederick. Here it is: https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/<br>It shows your services, service area, and an easy way for customers to call you. There is no upfront design or setup cost. Once the site is live, it is $99/month and includes hosting, routine maintenance, and up to two hours of updates each month. Happy to change anything you'd like. What do you think?</p>
       </div>
       <div class="tf-bubble tf-bubble--sms">
-        <p class="tf-bubble__meta">3 · Soft claim</p>
-        <p>If the draft feels right, you can claim the site for $297 setup. Hosting is $99/mo after. Happy to walk you through it on a quick call.</p>
-      </div>
-      <div class="tf-bubble tf-bubble--sms">
-        <p class="tf-bubble__meta">4 · Bump</p>
-        <p>Frederick, just bumping the Williams Hustle and Bustle Crew preview in case it got buried. Still happy to tweak copy or photos. Link again: https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/</p>
+        <p class="tf-bubble__meta">3 · Follow-up</p>
+        <p>Hi Frederick, just checking back. I still have the sample site I made for Williams Hustle and Bustle Crew. Would you like me to send it?</p>
       </div>
     </div>
     <div class="tf-modal__actions">

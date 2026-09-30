@@ -1,5 +1,5 @@
 # Site customization checklist · Williams Hustle and Bustle Crew (hs-004-williams)
-Wave 2 · Copperline · claim/$297 + hosting/$99 bar required. Rebuilt 2026-09-25 (CR 2026-09-25b, CEO change request).
+Wave 2 · Copperline · offer v2 pricing bar (CR 2026-09-30). Rebuilt 2026-09-25 (CR 2026-09-25b, CEO change request).
 
 Before preview send:
 - [x] Business name everywhere (title, wordmark, footer, schema)
@@ -14,15 +14,14 @@ Before preview send:
 - [x] Mobile pass (responsive Copperline CSS retained)
 - [x] No em dashes anywhere (html, js, css)
 - [x] Sample B/As labeled typical of this kind of job, no prices
-- [x] No dollar amounts other than $297 and $99
+- [x] No dollar amounts other than the $99/month in the pricing line
 - [x] Distinct H1 for city/trade
 - [x] No license numbers or license-board text on page
 - [x] No stock face as owner or crew
 - [x] No invented guarantee, quote hold, callback time, payment schedule, insurance claim, or years in business
 - [x] No same-name domain owned by someone else linked or offered
 - [x] No stray control characters; all sections present
-- [x] Stripe claim URL on bar: https://buy.stripe.com/cNieVdg1peCq9subRr1gs02
-- [x] Stripe hosting URL on bar and in journey: https://buy.stripe.com/8x2fZhaH52TI0VY7Bb1gs03
+- [x] Offer v2 (CR 2026-09-30): bar shows the CEO pricing line and "Questions or changes? Just reply to my text." only; no Stripe link on the page
 - [x] Preview URL on GitHub Pages (same repo as before)
 
 Owner first name in human spots: Frederick

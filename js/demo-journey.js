@@ -3,8 +3,6 @@
 (function () {
   'use strict';
 
-  var STRIPE_CLAIM = 'https://buy.stripe.com/cNieVdg1peCq9subRr1gs02';
-  var STRIPE_HOSTING = 'https://buy.stripe.com/8x2fZhaH52TI0VY7Bb1gs03';
   var LIVE_URL = 'https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/';
   var LS_CHANGES = 'tf_williams_change_log_v1';
   var LS_PURCHASED = 'tf_williams_purchased_v1';
@@ -85,9 +83,9 @@
     /* mode: draft | updated */
     if (!barSub) return;
     if (mode === 'updated') {
-      barSub.textContent = 'Draft for Frederick at Williams Hustle and Bustle Crew. Claim it, preview the rest of the journey, or request a change.';
+      barSub.textContent = 'Questions or changes? Just reply to my text.';
     } else {
-      barSub.textContent = 'Draft for Frederick at Williams Hustle and Bustle Crew. Claim it, preview the rest of the journey, or request a change.';
+      barSub.textContent = 'Questions or changes? Just reply to my text.';
     }
   }
 
@@ -247,30 +245,30 @@
     }
     if (err) err.classList.remove('is-on');
     if (!email.trim() || email.indexOf('@') < 1) return fail('Add a billing email we can reach.');
-    if (!phone.trim()) return fail('Add a phone for setup texts.');
-    if (!utility || !utility.checked) return fail('Confirm the utility note (pay keeps the site live).');
+    if (!phone.trim()) return fail('Add a phone for go-live texts.');
+    if (!utility || !utility.checked) return fail('Confirm the demo note.');
     if (!terms || !terms.checked) return fail('Please acknowledge the terms to continue.');
     if (journeyState.hasSite === null) return fail('Tell us if you already have a website.');
     if (journeyState.path === 'A') {
       var url = (($('#tf-current-url') || {}).value || '').trim();
       var reg = (($('#tf-registrar-a') || {}).value || '').trim();
       if (!url) return fail('Add your current website URL.');
-      if (!reg) return fail('Add your domain registrar (or best guess).');
+      if (!reg) return fail('Add where the current site is managed (or best guess).');
     }
     if (journeyState.path === 'B') {
       var dom = (($('#tf-domain-b') || {}).value || '').trim();
       var regB = (($('#tf-registrar-b') || {}).value || '').trim();
-      if (!dom) return fail('Add the domain you want to use.');
+      if (!dom) return fail('Add the name you have in mind.');
       if (!regB) return fail('Add your registrar.');
     }
     if (journeyState.path === 'C') {
       var i1 = (($('#tf-idea-1') || {}).value || '').trim();
       var i2 = (($('#tf-idea-2') || {}).value || '').trim();
       var i3 = (($('#tf-idea-3') || {}).value || '').trim();
-      if (!i1 || !i2 || !i3) return fail('Give us three name ideas so we can shortlist domains.');
-      if (!journeyState.domainPick) return fail('Pick one of the shortlisted domains.');
+      if (!i1 || !i2 || !i3) return fail('Give us three name ideas.');
+      if (!journeyState.domainPick) return fail('Pick one of the shortlisted names.');
     }
-    if (!journeyState.path) return fail('Choose whether you already have a domain.');
+    if (!journeyState.path) return fail('Choose whether you already have a name picked out.');
     return true;
   }
 
@@ -321,7 +319,7 @@
       return;
     }
     var act = t.getAttribute('data-tf');
-    if (act === 'claim' || act === 'hosting') {
+    if (act === 'hosting') {
       /* real <a href> handles navigation; allow default */
       return;
     }
