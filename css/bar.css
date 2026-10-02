@@ -1,0 +1,22 @@
+/* Sticky pricing bar */
+body.has-tf-bar{padding-bottom:7.5rem}
+.tf-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;
+  background:var(--ground);color:var(--ink-on-dark);
+  border-top:3px solid var(--copper);
+  box-shadow:0 -8px 24px rgba(0,0,0,.35);
+}
+.tf-bar[hidden]{display:none !important}
+.tf-bar__inner{
+  width:min(1200px, 100% - 2*var(--s4));
+  margin-inline:auto;
+  padding-block:var(--s3);
+  display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:space-between;gap:var(--s3) var(--s5);
+}
+.tf-bar__meta{display:grid;gap:2px;min-width:0}
+.tf-bar__sub{font-size:var(--t-sm);color:var(--muted-on-dark);max-width:42ch}
+@media (max-width:640px){
+  body.has-tf-bar{padding-bottom:9.5rem}
+  .tf-bar__inner{padding-block:var(--s3)}
+}

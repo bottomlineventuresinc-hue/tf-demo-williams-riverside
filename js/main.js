@@ -172,14 +172,14 @@
   }
 
   /* =====================================================
-     5. CONTACT FORM , demo branch. Remove this block and
-     the form posts to php/contact.php on a PHP host.
+     5. CONTACT FORM , preview only. Nothing is sent; the
+     status line asks the visitor to call.
      ===================================================== */
   var form = document.querySelector('.quote__form');
   if (form) {
     var status = form.querySelector('.quote__status');
     form.addEventListener('submit', function (e) {
-      e.preventDefault(); // DEMO: remove this listener when hosting with PHP.
+      e.preventDefault();
       var name = form.querySelector('#f-name');
       var email = form.querySelector('#f-email');
       var message = form.querySelector('#f-message');

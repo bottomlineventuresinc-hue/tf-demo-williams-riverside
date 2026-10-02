@@ -1,0 +1,9 @@
+# Site build settings: only the page files are published.
+exclude:
+  - "*.md"
+  - "*.txt"
+  - CHECKLIST.md
+  - DEMO-JOURNEY.md
+  - PHOTO-SOURCES.txt
+  - PREVIEW-URL.txt
+  - FROZEN.md

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/demo-journey.css">
+<link rel="stylesheet" href="css/bar.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +72,7 @@
 }
 </script>
 </head>
-<body>
+<body class="has-tf-bar">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head" id="top">
@@ -105,7 +105,6 @@
           <a class="btn btn--copper" href="tel:+19512073225">Call Frederick · 951-207-3225</a>
           <a class="btn btn--ghost" href="#quote">Send the job details</a>
         </div>
-        <p class="tf-updated-chip" id="tf-updated-chip" aria-hidden="true">Updated just now</p>
         <dl class="hero__facts hero__facts--text boot boot-5">
           <div class="fact"><dt>Owner</dt><dd class="mono">Frederick</dd></div>
           <div class="fact"><dt>Based in</dt><dd class="mono">Riverside</dd></div>
@@ -460,7 +459,7 @@
           <a class="mono" href="tel:+19512073225">951-207-3225</a>
           <span>19172 Laurenrae St, Riverside CA 92508<br>Hours: Call for hours</span>
         </address>
-        <p class="sec-head__note" style="margin-top:0.75rem">Preview form posts locally only (action="#"). Call Frederick for a real quote.</p>
+        <p class="sec-head__note" style="margin-top:0.75rem">Preview only: this form does not send anything yet. Call Frederick for a real quote.</p>
       </header>
       <form class="quote__form" data-reveal action="#" method="post" novalidate>
         <div class="field">
@@ -521,7 +520,6 @@
 </div>
 
 
-<!-- ===== Pricing bar and change request (client-side only) ===== -->
 <div class="tf-bar" id="tf-bar" role="region" aria-label="Pricing and questions">
   <div class="tf-bar__inner">
     <div class="tf-bar__meta">
@@ -531,40 +529,7 @@
   </div>
 </div>
 
-<div class="tf-spin" id="tf-spin" hidden role="status" aria-live="polite">
-  <div class="tf-spin__card">
-    <div class="tf-spin__ring" aria-hidden="true"></div>
-    <p class="tf-spin__title" id="tf-spin-title">Working on updates to your site…</p>
-    <p class="tf-spin__line" id="tf-spin-line">Updating the draft for Williams Hustle and Bustle Crew. Hang tight.</p>
-  </div>
-</div>
-
-<div class="tf-modal" id="tf-change-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tf-change-title">
-  <div class="tf-modal__panel">
-    <div class="tf-modal__head">
-      <div>
-        <p class="tf-modal__kicker">Change request</p>
-        <h2 id="tf-change-title">What should we update?</h2>
-      </div>
-      <button type="button" class="tf-modal__close" data-tf="close-change" aria-label="Close">&times;</button>
-    </div>
-    <p class="tf-note">This is a live demo. Your note is saved in this browser only. We will simulate an update on the draft so you can see the change land.</p>
-    <form id="tf-change-form">
-      <div class="tf-field">
-        <label for="tf-change-msg">Your message <span aria-hidden="true">*</span></label>
-        <textarea id="tf-change-msg" name="message" required placeholder="e.g. Soften the hero line and mention your top service first."></textarea>
-      </div>
-      <p class="tf-err" id="tf-change-err" role="alert"></p>
-      <div class="tf-modal__actions">
-        <button type="submit" class="btn btn--copper">Submit change</button>
-        <button type="button" class="btn btn--ghost" data-tf="close-change">Cancel</button>
-      </div>
-    </form>
-  </div>
-</div>
-
 <script src="js/main.js"></script>
-<script src="js/demo-journey.js"></script>
 
 </body>
 </html>
