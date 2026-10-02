@@ -1,5 +1,5 @@
-/* Template Factory - Williams Hustle and Bustle Crew live demo journey.
-   Client-side simulate only. No real AI, SMS, or backend. */
+/* Williams Hustle and Bustle Crew site overlay: pricing bar and change request.
+   Client-side only. No backend. */
 (function () {
   'use strict';
 
@@ -36,8 +36,6 @@
   var changeForm = $('#tf-change-form');
   var changeMsg = $('#tf-change-msg');
   var changeErr = $('#tf-change-err');
-  var journeyModal = $('#tf-journey-modal');
-  var outreachModal = $('#tf-outreach-modal');
   var updatedChip = $('#tf-updated-chip');
   var heroH = $('#hero-h');
   var heroLede = $('.hero .lede');
@@ -172,126 +170,6 @@
     });
   }
 
-  /* ----- Journey ----- */
-  var journeyState = { hasSite: null, path: null, domainPick: null };
-
-  function showJourneyStep(id) {
-    $all('.tf-step', journeyModal).forEach(function (el) {
-      el.hidden = el.getAttribute('data-step') !== id;
-    });
-  }
-
-  function openJourney() {
-    journeyState = { hasSite: null, path: null, domainPick: null };
-    $all('.tf-path', journeyModal).forEach(function (el) { hide(el); });
-    $all('.tf-domain', journeyModal).forEach(function (el) { el.classList.remove('is-picked'); });
-    var form = $('#tf-onboard-form');
-    if (form) form.reset();
-    showJourneyStep('pay');
-    openModal(journeyModal);
-  }
-
-  function markPurchased() {
-    try { localStorage.setItem(LS_PURCHASED, '1'); } catch (e) {}
-  }
-
-  function startSimulatePurchase() {
-    markPurchased();
-    hide(bar);
-    openJourney();
-  }
-
-  /* Path branching */
-  function setHasSite(yes) {
-    journeyState.hasSite = yes;
-    $all('.tf-path', journeyModal).forEach(hide);
-    if (yes) {
-      journeyState.path = 'A';
-      show($('#tf-path-a'));
-    } else {
-      show($('#tf-path-no-site'));
-    }
-  }
-
-  function setDomainKnown(yes) {
-    $all('.tf-path', journeyModal).forEach(hide);
-    show($('#tf-path-no-site'));
-    if (yes) {
-      journeyState.path = 'B';
-      show($('#tf-path-b'));
-    } else {
-      journeyState.path = 'C';
-      show($('#tf-path-c'));
-    }
-  }
-
-  function pickDomain(btn) {
-    $all('.tf-domain', journeyModal).forEach(function (el) { el.classList.remove('is-picked'); });
-    btn.classList.add('is-picked');
-    journeyState.domainPick = btn.getAttribute('data-domain');
-    var hidden = $('#tf-domain-picked');
-    if (hidden) hidden.value = journeyState.domainPick || '';
-  }
-
-  function validateOnboard() {
-    var email = ($('#tf-bill-email') || {}).value || '';
-    var phone = ($('#tf-bill-phone') || {}).value || '';
-    var utility = $('#tf-utility');
-    var terms = $('#tf-terms');
-    var err = $('#tf-onboard-err');
-    function fail(t) {
-      if (err) { err.textContent = t; err.classList.add('is-on'); }
-      return false;
-    }
-    if (err) err.classList.remove('is-on');
-    if (!email.trim() || email.indexOf('@') < 1) return fail('Add a billing email we can reach.');
-    if (!phone.trim()) return fail('Add a phone for go-live texts.');
-    if (!utility || !utility.checked) return fail('Confirm the demo note.');
-    if (!terms || !terms.checked) return fail('Please acknowledge the terms to continue.');
-    if (journeyState.hasSite === null) return fail('Tell us if you already have a website.');
-    if (journeyState.path === 'A') {
-      var url = (($('#tf-current-url') || {}).value || '').trim();
-      var reg = (($('#tf-registrar-a') || {}).value || '').trim();
-      if (!url) return fail('Add your current website URL.');
-      if (!reg) return fail('Add where the current site is managed (or best guess).');
-    }
-    if (journeyState.path === 'B') {
-      var dom = (($('#tf-domain-b') || {}).value || '').trim();
-      var regB = (($('#tf-registrar-b') || {}).value || '').trim();
-      if (!dom) return fail('Add the name you have in mind.');
-      if (!regB) return fail('Add your registrar.');
-    }
-    if (journeyState.path === 'C') {
-      var i1 = (($('#tf-idea-1') || {}).value || '').trim();
-      var i2 = (($('#tf-idea-2') || {}).value || '').trim();
-      var i3 = (($('#tf-idea-3') || {}).value || '').trim();
-      if (!i1 || !i2 || !i3) return fail('Give us three name ideas.');
-      if (!journeyState.domainPick) return fail('Pick one of the shortlisted names.');
-    }
-    if (!journeyState.path) return fail('Choose whether you already have a name picked out.');
-    return true;
-  }
-
-  function runDeploy() {
-    showJourneyStep('deploy');
-    var items = $all('#tf-deploy-list li');
-    items.forEach(function (li) { li.classList.remove('is-done'); });
-    var i = 0;
-    function tick() {
-      if (i < items.length) {
-        items[i].classList.add('is-done');
-        i += 1;
-        setTimeout(tick, reduceMotion.matches ? 80 : 700);
-      } else {
-        setTimeout(function () { showJourneyStep('success'); }, reduceMotion.matches ? 200 : 600);
-      }
-    }
-    setTimeout(tick, reduceMotion.matches ? 100 : 500);
-  }
-
-  /* ----- Outreach ----- */
-  function openOutreach() { openModal(outreachModal); }
-
   /* ----- Wire UI ----- */
   document.body.classList.add('has-tf-bar');
   setBarMode(changeCount > 0 ? 'updated' : 'draft');
@@ -311,10 +189,9 @@
     var t = e.target.closest('[data-tf]');
     if (!t) {
       if (e.target.classList.contains('tf-modal')) {
-        /* click backdrop closes change/outreach, not journey mid-flow unless close btn */
+        /* click backdrop closes the change modal */
         var mid = e.target;
         if (mid === changeModal) closeModal(changeModal);
-        if (mid === outreachModal) closeModal(outreachModal);
       }
       return;
     }
@@ -324,41 +201,13 @@
       return;
     }
     if (act === 'change') { openChangeModal(); return; }
-    if (act === 'simulate') { startSimulatePurchase(); return; }
-    if (act === 'journey') { startSimulatePurchase(); return; }
-    if (act === 'outreach') { openOutreach(); return; }
     if (act === 'close-change') { closeModal(changeModal); return; }
-    if (act === 'close-journey') { closeModal(journeyModal); show(bar); return; }
-    if (act === 'close-outreach') { closeModal(outreachModal); return; }
-    if (act === 'journey-next-onboard') { showJourneyStep('onboard'); return; }
-    if (act === 'has-site-yes') { setHasSite(true); return; }
-    if (act === 'has-site-no') { setHasSite(false); return; }
-    if (act === 'domain-yes') { setDomainKnown(true); return; }
-    if (act === 'domain-no') { setDomainKnown(false); return; }
-    if (act === 'pick-domain') { pickDomain(t); return; }
-    if (act === 'onboard-continue') {
-      e.preventDefault();
-      if (!validateOnboard()) return;
-      runDeploy();
-      return;
-    }
-    if (act === 'journey-done') {
-      closeModal(journeyModal);
-      show(bar);
-      setBarMode('updated');
-      return;
-    }
   });
 
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     if (spin && !spin.hidden) return;
     if (changeModal && !changeModal.hidden) closeModal(changeModal);
-    else if (outreachModal && !outreachModal.hidden) closeModal(outreachModal);
-    else if (journeyModal && !journeyModal.hidden) {
-      closeModal(journeyModal);
-      show(bar);
-    }
   });
 
   /* expose for debug */

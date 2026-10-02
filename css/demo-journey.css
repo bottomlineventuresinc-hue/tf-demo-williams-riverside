@@ -1,6 +1,6 @@
 /* =========================================================
-   Template Factory demo journey - overlays & panels
-   Matches Copperline palette. Demo only.
+   Site overlay: pricing bar, spinner, change request
+   Matches Copperline palette.
    ========================================================= */
 
 body.has-tf-bar{padding-bottom:7.5rem}
@@ -218,25 +218,11 @@ body.has-tf-bar{padding-bottom:7.5rem}
 .tf-details[open] summary{margin-bottom:var(--s3);color:var(--copper)}
 .tf-details p{font-size:var(--t-sm);color:var(--muted);max-width:none}
 
-/* Floating access chip for outreach */
-.tf-outreach-fab{
-  position:fixed;right:var(--s4);bottom:calc(7.5rem + var(--s3));z-index:65;
-  background:var(--paper);color:var(--ink);
-  border:2px solid var(--ground);
-  box-shadow:4px 4px 0 rgba(0,0,0,.25);
-  font-family:var(--font-text);font-weight:700;font-size:var(--t-xs);
-  text-transform:uppercase;letter-spacing:0.06em;
-  padding:var(--s3) var(--s4);cursor:pointer;
-}
-.tf-outreach-fab:hover{background:var(--copper);color:#fff;border-color:var(--copper)}
-.tf-outreach-fab[hidden]{display:none !important}
-
 @media (max-width:640px){
   body.has-tf-bar{padding-bottom:9.5rem}
   .tf-bar__inner{padding-block:var(--s3)}
   .tf-bar__actions{width:100%}
   .tf-bar .btn{flex:1 1 auto;justify-content:center}
-  .tf-outreach-fab{right:var(--s3);bottom:calc(9.5rem + var(--s2));font-size:0.65rem;padding:var(--s2) var(--s3)}
 }
 
 @media (prefers-reduced-motion: reduce){

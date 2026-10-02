@@ -521,7 +521,7 @@
 </div>
 
 
-<!-- ===== Template Factory demo journey (client-side only) ===== -->
+<!-- ===== Pricing bar and change request (client-side only) ===== -->
 <div class="tf-bar" id="tf-bar" role="region" aria-label="Pricing and questions">
   <div class="tf-bar__inner">
     <div class="tf-bar__meta">
@@ -530,8 +530,6 @@
     </div>
   </div>
 </div>
-
-<button type="button" class="tf-outreach-fab" id="tf-outreach-fab" data-tf="outreach">See SMS / email journey</button>
 
 <div class="tf-spin" id="tf-spin" hidden role="status" aria-live="polite">
   <div class="tf-spin__card">
@@ -562,184 +560,6 @@
         <button type="button" class="btn btn--ghost" data-tf="close-change">Cancel</button>
       </div>
     </form>
-  </div>
-</div>
-
-<div class="tf-modal" id="tf-journey-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tf-journey-title">
-  <div class="tf-modal__panel tf-modal__panel--wide">
-    <div class="tf-modal__head">
-      <div>
-        <p class="tf-modal__kicker">Post-purchase journey · demo</p>
-        <h2 id="tf-journey-title">Get Williams Hustle and Bustle Crew live</h2>
-      </div>
-      <button type="button" class="tf-modal__close" data-tf="close-journey" aria-label="Close">&times;</button>
-    </div>
-
-    <div class="tf-step" data-step="pay">
-      <p class="tf-note"><strong>Go-live steps (demo).</strong> No real charge is made on this path.</p>
-      <div class="tf-step__actions">
-        <button type="button" class="btn btn--copper" data-tf="journey-next-onboard">Continue to onboarding</button>
-        <button type="button" class="btn btn--ghost" data-tf="close-journey">Close</button>
-      </div>
-    </div>
-
-    <div class="tf-step" data-step="onboard" hidden>
-      <form id="tf-onboard-form">
-        <div class="tf-choice">
-          <p><strong>Do you have a website today?</strong></p>
-          <div class="tf-choice__btns">
-            <button type="button" class="btn btn--ghost" data-tf="has-site-yes">Yes</button>
-            <button type="button" class="btn btn--ghost" data-tf="has-site-no">No</button>
-          </div>
-        </div>
-
-        <div class="tf-path" id="tf-path-a" hidden>
-          <p class="tf-note">Path A · invite-first. Nothing changes on your current site until you approve.</p>
-          <div class="tf-field">
-            <label for="tf-current-url">Current website URL</label>
-            <input id="tf-current-url" type="text" placeholder="https://yoursite.com" autocomplete="url">
-          </div>
-          <div class="tf-field">
-            <label for="tf-registrar-a">Registrar</label>
-            <input id="tf-registrar-a" type="text" placeholder="Where the current site is managed">
-          </div>
-        </div>
-
-        <div class="tf-path" id="tf-path-no-site" hidden>
-          <p><strong>Do you already have a name picked out for the site?</strong></p>
-          <div class="tf-choice__btns">
-            <button type="button" class="btn btn--ghost" data-tf="domain-yes">Yes, I have one</button>
-            <button type="button" class="btn btn--ghost" data-tf="domain-no">Not yet</button>
-          </div>
-        </div>
-
-        <div class="tf-path" id="tf-path-b" hidden>
-          <p class="tf-note">Path B · you have a name picked out. We confirm the details by text.</p>
-          <div class="tf-field">
-            <label for="tf-domain-b">Site name</label>
-            <input id="tf-domain-b" type="text" placeholder="The name you have in mind">
-          </div>
-          <div class="tf-field">
-            <label for="tf-registrar-b">Registrar</label>
-            <input id="tf-registrar-b" type="text" placeholder="Where you bought it">
-          </div>
-        </div>
-
-        <div class="tf-path" id="tf-path-c" hidden>
-          <p class="tf-note">Path C · three name ideas. Demo list only; we follow up by text.</p>
-          <div class="tf-field">
-            <label for="tf-idea-1">Name idea 1</label>
-            <input id="tf-idea-1" type="text" placeholder="Williams Hustle Bustle">
-          </div>
-          <div class="tf-field">
-            <label for="tf-idea-2">Name idea 2</label>
-            <input id="tf-idea-2" type="text" placeholder="Williams Riverside Crew">
-          </div>
-          <div class="tf-field">
-            <label for="tf-idea-3">Name idea 3</label>
-            <input id="tf-idea-3" type="text" placeholder="Hustle Bustle Crew">
-          </div>
-          <p class="tf-note" style="margin-top:0.5rem"><strong>Shortlist (demo)</strong></p>
-          <div class="tf-domain-list">
-            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="option-1">
-              <strong>Option 1</strong><span>demo</span>
-            </button>
-            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="option-2">
-              <strong>Option 2</strong><span>demo</span>
-            </button>
-            <button type="button" class="tf-domain" data-tf="pick-domain" data-domain="option-3">
-              <strong>Option 3</strong><span>demo</span>
-            </button>
-          </div>
-          <input type="hidden" id="tf-domain-picked" value="">
-        </div>
-
-        <div class="tf-field">
-          <label for="tf-bill-email">Billing email</label>
-          <input id="tf-bill-email" type="email" autocomplete="email" placeholder="you@example.com">
-        </div>
-        <div class="tf-field">
-          <label for="tf-bill-phone">Phone for go-live texts</label>
-          <input id="tf-bill-phone" type="tel" autocomplete="tel" placeholder="951-207-3225">
-        </div>
-        <div class="tf-checks">
-          <label class="tf-check">
-            <input type="checkbox" id="tf-utility">
-            <span>I understand this is a demo walkthrough.</span>
-          </label>
-          <label class="tf-check">
-            <input type="checkbox" id="tf-terms">
-            <span>I acknowledge the hosting terms for this demo.</span>
-          </label>
-        </div>
-        <p class="tf-err" id="tf-onboard-err" role="alert"></p>
-        <div class="tf-step__actions">
-          <button type="button" class="btn btn--copper" data-tf="onboard-continue">Continue to deploy</button>
-        </div>
-      </form>
-    </div>
-
-    <div class="tf-step" data-step="deploy" hidden>
-      <p class="tf-spin__title" style="text-align:left">Getting your site live…</p>
-      <p class="tf-note">DNS, SSL, and NAP checks. This is a demo checklist.</p>
-      <ul class="tf-checklist" id="tf-deploy-list">
-        <li>DNS pointed</li>
-        <li>SSL certificate active</li>
-        <li>NAP verify (name, address, phone)</li>
-      </ul>
-    </div>
-
-    <div class="tf-step" data-step="success" hidden>
-      <p><strong>Your site is live.</strong></p>
-      <p class="tf-note">Live URL (this draft):</p>
-      <p class="tf-success-url"><a href="https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/" target="_blank" rel="noopener">https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/</a></p>
-
-      <p class="tf-note" style="margin-top:0.5rem"><strong>Sample messages Frederick would get</strong> (shown only, not sent):</p>
-      <div class="tf-bubbles">
-        <div class="tf-bubble tf-bubble--sms">
-          <p class="tf-bubble__meta">SMS · just now</p>
-          <p>Frederick, your Williams Hustle and Bustle Crew site is live: https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/ · Reply if anything looks off.</p>
-        </div>
-        <div class="tf-bubble tf-bubble--email">
-          <p class="tf-bubble__meta">Email · just now</p>
-          <p>Subject: Williams Hustle and Bustle Crew is live<br><br>Hi Frederick, your site is up. Bookmark the link above. If you need a tweak, reply to this email or use Request a change on the draft.</p>
-        </div>
-      </div>
-
-      <div class="tf-step__actions" style="margin-top:0.5rem">
-        <button type="button" class="btn btn--ghost" data-tf="journey-done">Done</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="tf-modal" id="tf-outreach-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tf-outreach-title">
-  <div class="tf-modal__panel tf-modal__panel--wide">
-    <div class="tf-modal__head">
-      <div>
-        <p class="tf-modal__kicker">Sample outreach · demo</p>
-        <h2 id="tf-outreach-title">SMS journey for Frederick</h2>
-      </div>
-      <button type="button" class="tf-modal__close" data-tf="close-outreach" aria-label="Close">&times;</button>
-    </div>
-    <p class="tf-note">Human sequence from first touch to follow-up. Filled for Williams Hustle and Bustle Crew / Frederick / Riverside. Nothing is sent from this page.</p>
-    <div class="tf-bubbles">
-      <div class="tf-bubble tf-bubble--sms">
-        <p class="tf-bubble__meta">1 · First text</p>
-        <p>Hi Frederick, this is Maria with Template Factory. I came across Williams Hustle and Bustle Crew and put together a sample site to show how your plumbing and landscaping work could look online. It's made just for your business. Would you like me to send it over?</p>
-      </div>
-      <div class="tf-bubble tf-bubble--sms">
-        <p class="tf-bubble__meta">2 · After they say yes</p>
-        <p>Thanks, Frederick. Here it is: https://bottomlineventuresinc-hue.github.io/tf-demo-williams-riverside/<br>It shows your services, service area, and an easy way for customers to call you. There is no upfront design or setup cost. Once the site is live, it is $99/month and includes hosting, routine maintenance, and up to two hours of updates each month. Happy to change anything you'd like. What do you think?</p>
-      </div>
-      <div class="tf-bubble tf-bubble--sms">
-        <p class="tf-bubble__meta">3 · Follow-up</p>
-        <p>Hi Frederick, just checking back. I still have the sample site I made for Williams Hustle and Bustle Crew. Would you like me to send it?</p>
-      </div>
-    </div>
-    <div class="tf-modal__actions">
-      <button type="button" class="btn btn--ghost" data-tf="close-outreach">Close</button>
-    </div>
   </div>
 </div>
 
